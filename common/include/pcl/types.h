@@ -138,7 +138,14 @@ namespace pcl
 
   /**
    * \brief Type used for indices in PCL
+   * \todo Remove with C++20
    */
-  using Indices = std::vector<index_t>;
+  template <typename Alloc = std::allocator<index_t>>
+  using IndicesAlloc = std::vector<index_t, Alloc>;
+
+  /**
+   * \brief Type used for indices in PCL
+   */
+  using Indices = IndicesAlloc<>;
 }  // namespace pcl
 
