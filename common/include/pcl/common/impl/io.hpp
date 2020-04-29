@@ -189,7 +189,7 @@ copyPointCloud (const pcl::PointCloud<PointInT> &cloud_in,
 
 template <typename PointT, typename IndicesVectorAllocator> void
 copyPointCloud (const pcl::PointCloud<PointT> &cloud_in,
-                const IndicesAlloc<IndicesVectorAllocator> &indices,
+                const IndicesAllocator<IndicesVectorAllocator> &indices,
                 pcl::PointCloud<PointT> &cloud_out)
 {
   // Do we want to copy everything?
@@ -211,7 +211,7 @@ copyPointCloud (const pcl::PointCloud<PointT> &cloud_in,
 
 template <typename PointInT, typename PointOutT, typename IndicesVectorAllocator> void
 copyPointCloud (const pcl::PointCloud<PointInT> &cloud_in,
-                const IndicesAlloc<IndicesVectorAllocator> &indices,
+                const IndicesAllocator<IndicesVectorAllocator> &indices,
                 pcl::PointCloud<PointOutT> &cloud_out)
 {
   // Copy the headers and allocate enough space
